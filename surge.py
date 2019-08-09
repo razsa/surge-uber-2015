@@ -23,7 +23,7 @@ class config:
         'end_longitude': -84.407953
     }]
     url = 'https://api.uber.com/v1/estimates/price'
-    key = 'w_q3t-qtZOAXrzVlG6YRXdn7C63yjjTd1D2HWDCp'
+    key = API_KEY
     email = ['email@yahoo.com']
     source = 'email@gmail.com'
     product = 'uberX'
