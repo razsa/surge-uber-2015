@@ -1,9 +1,3 @@
-# V0.4
-##
-# configuration
-##
-
-
 class config:
     locations = [{
         'name': 'Bankhead/Grant-Park',
@@ -53,7 +47,7 @@ def send(text):
     server.login(config.gmail_user, config.gmail_pwd)
     server.sendmail(config.source, config.email, message)
     server.close()
-    print 'Sending email - %s' % (text)
+    print('Sending email - %s' % (text))
 
 
 def listen():
@@ -76,13 +70,13 @@ def listen():
                             pre_surge[index] = surge
                             send(msg)
                         else:
-                            print 'Checking - %s (min: %.2f)' % (msg, config.min_surge)
+                            print('Checking - %s (min: %.2f)' % (msg, config.min_surge))
                     else:
-                        print 'Unidentifiable product (%s).' % config.product
+                        print('Unidentifiable product (%s).' % config.product)
                 else:
-                    print 'Incomplete response. Prices array missing.'
-            except Exception, e:
-                print str(e)
+                    print('Incomplete response. Prices array missing.')
+            except Exception as e:
+                print(str(e))
         sys.stdout.flush()
         time.sleep(config.timer)
 listen()
